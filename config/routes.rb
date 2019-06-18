@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :accounts
   resources :users
 
+  delete '/logout', to: 'sessions#destroy'
+
   root :to=>"users#index"
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

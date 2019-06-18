@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+    before_action :get_user, only: [:show, :edit, :update]
+    
     def index
     end
 
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        get_user
+        @account = Account.all
         if session[:user_id] != @user.id
             redirect_to '/login'
         end
@@ -23,7 +24,25 @@ class UsersController < ApplicationController
             flash[:warning] = "Enter Username and Password (6 or more characters)"
             redirect_to new_user_path
         end
-    end        
+    end
+    
+    def edit
+    end
+
+    def update
+        if @user.authenticate(params[:user][:current_password])
+            @user.update(password: params[:user][:password])
+            redirect_to @user
+        else
+            flash[:check] = "Provide a valid password"
+            @user.errors.add :current_password
+            render :edit
+        end
+    end
+
+    def destroy
+    end
+
 
 
     private

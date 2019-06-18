@@ -1,4 +1,4 @@
-<h4> Creating New Account</h4>
+<h4> Edit Account Information</h4>
 <%= form_for @user do |f| %>
     <%= f.label :username%><br>
     <%= f.text_field :username %><br>
@@ -6,9 +6,8 @@
     <%= f.password_field :password %><br>
     <%= f.label :password_confirmation%><br>
     <%= f.password_field :password_confirmation %><br>
-    <%= f.submit "Created New User"%>
+    <%= f.submit "Edit User"%>
 <% end %>
-
-<div id='warning'>
-    <div><%= flash[:warning] %> </div>
+<div id='check'>
+    <div><%= flash[:check] %> </div>
 </div>
