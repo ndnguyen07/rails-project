@@ -1,0 +1,2 @@
+module AccountChampionsHelper
+end

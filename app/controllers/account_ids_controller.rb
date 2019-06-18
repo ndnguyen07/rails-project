@@ -1,2 +1,0 @@
-class AccountIdsController < ApplicationController
-end

@@ -1,2 +1,0 @@
-class AccountId < ApplicationRecord
-end

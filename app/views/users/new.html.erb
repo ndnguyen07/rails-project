@@ -1,0 +1,14 @@
+<h4> Creating New Account</h4>
+<%= form_for @user do |f| %>
+    <label>Username</label><br>
+    <%= f.text_field :username %><br>
+    <label>Password</label><br>
+    <%= f.password_field :password %><br>
+    <label>Confirm Password<label><br>
+    <%= f.password_field :password_confirmation %><br>
+    <%= f.submit "Created New User"%>
+<% end %>
+
+<div id='warning'>
+    <div><%= flash[:warning] %> </div>
+</div>

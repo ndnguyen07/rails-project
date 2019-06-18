@@ -1,0 +1,2 @@
+class AccountChampionsController < ApplicationController
+end
