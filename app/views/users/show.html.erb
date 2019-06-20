@@ -1,2 +1,8 @@
- <%= button_to "Edit", edit_user_path, {method: 'get', class: 'user'} %>
- <%= button_to "Log Out", logout_path, {method: 'delete', class: 'user'} %>
+<%= button_to "Edit", edit_user_path, {method: 'get', class: 'user'} %>
+<%= button_to "Log Out", logout_path, {method: 'delete', class: 'user'} %><br>
+
+
+<% @user.accounts.each do |ua| %>
+<%= ua.name %><br>
+<%= link_to 'View User', account_path %><br>
+<% end %>

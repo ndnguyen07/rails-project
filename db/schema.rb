@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_004122) do
+ActiveRecord::Schema.define(version: 2019_06_20_065733) do
 
   create_table "account_champions", force: :cascade do |t|
     t.string "account_id"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2019_06_18_004122) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "summoner_level"
+  end
+
+  create_table "builds", force: :cascade do |t|
+    t.string "runes"
+    t.string "items"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "champions", force: :cascade do |t|
@@ -30,6 +40,13 @@ ActiveRecord::Schema.define(version: 2019_06_18_004122) do
     t.string "title"
     t.string "tags"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_accounts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

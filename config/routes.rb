@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :builds
+  resources :user_accounts
   resources :account_champions
   resources :champions
   resources :accounts

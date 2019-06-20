@@ -1,0 +1,9 @@
+<%= form_for @build do |f| %>
+<%= f.label :runes %><br>
+<%= f.collection_select :build_id, Build.all, :id, :runes %><br>
+<%= f.label :items %><br>
+<%= f.collection_select :build_id, Build.all, :id, :items %><br>
+<%= f.label :description %><br>
+<%= f.text_area :description %><br>
+<%= f.submit "Edit Build" %>
+<% end %>

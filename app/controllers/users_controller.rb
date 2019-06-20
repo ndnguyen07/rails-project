@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update]
     
     def index
+        @accounts = Account.all
     end
 
     def new
@@ -9,7 +10,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        @account = Account.all
+        @user_account = UserAccount.where(user_id: session[:user_id])
+        @user_account = UserAccount.new
         if session[:user_id] != @user.id
             redirect_to '/login'
         end
@@ -27,6 +29,9 @@ class UsersController < ApplicationController
     end
     
     def edit
+        if session[:user_id] != @user.id
+            redirect_to '/login'
+        end
     end
 
     def update
@@ -38,9 +43,6 @@ class UsersController < ApplicationController
             @user.errors.add :current_password
             render :edit
         end
-    end
-
-    def destroy
     end
 
 

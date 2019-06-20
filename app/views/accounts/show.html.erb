@@ -1,0 +1,11 @@
+<%= @account.name %><br>
+<%= @account.summoner_level %>
+<%#= form_for @account do |f| %>
+<%#= f.hidden_field :name %>
+<%#= f.submit 'Save' %>
+<%# end %>
+
+<%= form_tag '/user_accounts', method: "POST" do %>
+<%= hidden_field_tag :account_id, @account.id %>
+<%= submit_tag :Save %>
+<% end %>
