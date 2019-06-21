@@ -27,8 +27,8 @@ Account2 = Account.create(name: '1 Shady', summoner_level: '278')
 Account3 = Account.create(name: 'FLY V1per', summoner_level: '241')
 
 #Build
-Build1 = Build.create(name:'whatever',runes:'Precision', items:'Crit', description:"Hello")
-Build2 = Build.create(name:'idk',runes:'Domination', items:'Lethality', description:"I'm Working")
-Build3 = Build.create(name:'whatev',runes:'Sorcery', items:'Ability', description:'yayy')
-Build4 = Build.create(name:'I Cant Even!', runes:'Resolve', items:'Tank', description:'ughhh')
-Build5 = Build.create(name:'Whaaaa',runes:'inspiration', items: 'Support', description:'woooo')
+Build1 = Build.create(name:'whatever',runes:'Precision', items:'Crit', description:"Hello", user_id: User1.id)
+Build2 = Build.create(name:'idk',runes:'Domination', items:'Lethality', description:"I'm Working", user_id: User1.id)
+Build3 = Build.create(name:'whatev',runes:'Sorcery', items:'Ability', description:'yayy', user_id: User1.id)
+Build4 = Build.create(name:'I Cant Even!', runes:'Resolve', items:'Tank', description:'ughhh', user_id: User1.id)
+Build5 = Build.create(name:'Whaaaa',runes:'Inspiration', items: 'Support', description:'woooo', user_id: User1.id)

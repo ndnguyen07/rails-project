@@ -1,8 +1,15 @@
+<center><div class="header">
+    <%= link_to "Champion List", '/champions'%>
+    <%= link_to "Accounts", '/accounts' %>
+    <%= link_to "Analytics", '/analytics' %>
+    <%= link_to "Build", '/builds' %><br>
+</div><center>
+
 <%= button_to "Edit", edit_user_path, {method: 'get', class: 'user'} %>
 <%= button_to "Log Out", logout_path, {method: 'delete', class: 'user'} %><br>
 
 
 <% @user.accounts.each do |ua| %>
 <%= ua.name %><br>
-<%= link_to 'View User', account_path %><br>
+<%= link_to 'View Account', account_path(ua.id) %><br>
 <% end %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  get '/analytics', to: 'accounts#analytics'
+
   root :to=>"users#index"
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

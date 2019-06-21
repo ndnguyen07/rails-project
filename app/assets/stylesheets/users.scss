@@ -1,3 +1,39 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.title {
+    margin-top: 250px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.815);
+    font-size: 50px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.header {
+    font-weight: lighter;
+    color: rgb(7, 160, 165);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.home {
+    background-image: url('home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a:visited{
+    color:rgb(175, 75, 8);
+}
+
+body{
+    background-image: url('background.png')
+}
+
+.button{
+    background-color: gray;
+    text-decoration-color: rgb(165, 184, 0);
+}

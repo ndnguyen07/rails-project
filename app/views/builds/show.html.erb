@@ -1,5 +1,8 @@
+<%= @build.name %><br>
 <%= @build.runes %><br>
 <%= @build.items %><br>
 <%= @build.description %><br>
 
-<%= button_to "Delete Build", current_user_path, {method: 'delete', class: 'build'} %><br>
+<%= link_to "Edit Build", edit_build_path(@build) %><br>
+
+<%= link_to "Delete Build", @build, method: :delete %><br>

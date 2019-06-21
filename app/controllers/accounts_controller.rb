@@ -10,6 +10,8 @@ class AccountsController < ApplicationController
     end
 
     def show
+        # byebug
+        @user = session[:user_id]
     end
 
     def create
@@ -20,6 +22,14 @@ class AccountsController < ApplicationController
     def update
         @account.update(set_params)
         redirect_to current_user
+    end
+
+    def analytics
+        @highest_lvl = Account.highest_summoner_level
+        @lowest_lvl = Account.lowest_summoner_level
+        @longest_name = Account.longest_name
+        @shortest_name = Account.shortest_name
+        render :analytics
     end
 
     private

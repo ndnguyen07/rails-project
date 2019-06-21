@@ -1,14 +1,11 @@
 class BuildsController < ApplicationController
     before_action :find_build, only: [:show, :edit, :update, :destroy]
-
+    
     def index
-        @builds = Build.all
+        @builds = Build.where(user_id: session[:user_id])
     end
 
     def show
-        if session[:user_id] != @user.id
-            redirect_to '/login'
-        end
     end
 
     def new
@@ -16,8 +13,8 @@ class BuildsController < ApplicationController
     end
 
     def create
-        @build = Build.create(find_params)
-        redirect_to @build
+        @build = Build.create(user_id: session[:user_id], runes: params[:build][:runes], description: params[:build][:description], items: params[:build][:items], name: params[:build][:name])
+        redirect_to builds_path
     end
 
     def edit
@@ -30,14 +27,14 @@ class BuildsController < ApplicationController
 
     def destroy
         @build.destroy
-        redirect_to current_user_path
+        redirect_to builds_path
     end
 
 
     private
 
     def find_params
-        params.require(:build).permit(:runes, :items, :description)
+        params.require(:build).permit(:runes, :items, :description, :user_id, :name)
     end
 
     def find_build

@@ -1,6 +1,10 @@
+<center><div class="header">
+<%= link_to 'Create New Build', '/builds/new'%>
+<%= link_to 'User', current_user %>
+</div><center>
 <% @builds.each do |b| %>
-<h1><%= b.name %></h1>
+<h1><%= link_to b.name, b %></h1>
 <%= b.runes %>
 <%= b.items %>
-<%= b.descriptions %>
+<%= b.description %>
 <% end %>

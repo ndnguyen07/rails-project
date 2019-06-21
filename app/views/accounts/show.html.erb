@@ -1,11 +1,16 @@
 <%= @account.name %><br>
 <%= @account.summoner_level %>
-<%#= form_for @account do |f| %>
-<%#= f.hidden_field :name %>
-<%#= f.submit 'Save' %>
-<%# end %>
+
+<div id='message'>
+    <div><%= flash[:message] %> </div>
+</div>
 
 <%= form_tag '/user_accounts', method: "POST" do %>
 <%= hidden_field_tag :account_id, @account.id %>
 <%= submit_tag :Save %>
+<% end %>
+
+<%= form_tag "/user_accounts/#{@user}", method: "DELETE" do %>
+<%= hidden_field_tag :account_id, @account.id %>
+<%= submit_tag :Remove %>
 <% end %>

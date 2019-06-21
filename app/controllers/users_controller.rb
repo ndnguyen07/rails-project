@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update]
-    
+
     def index
         @accounts = Account.all
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        if @user.authenticate(params[:user][:current_password])
+        if @user.authenticate(params[:user][:password])
             @user.update(password: params[:user][:password])
             redirect_to @user
         else
